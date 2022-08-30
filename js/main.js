@@ -43,5 +43,5 @@ console.log("Semanas: " + time / conversion[3]);
 
 for (let i = 0; i < conversion.length; i++){
     console.log("El valor por el que es dividido el tiempo al operar es: " + conversion[i]);
-    console.log("Cantidad de elementos en el grupo de conversión: " + conversion.length);
 }
+console.log("Cantidad de elementos en el grupo de conversión: " + conversion.length);
