@@ -27,13 +27,21 @@ console.log("Bienvenido, " + userName);
 
 let time = parseFloat(window.prompt("Inserte cantidad de tiempo en segundos: "));
 
-minutos = time / 60;
-horas = time / 3600;
-dias = time / 86400;
+const conversion = [
+    minutos = 60,
+    horas = 3600,
+    dias = 8640
+];
+conversion.push(semanas = 604800);
+
 
 console.log("Cantidad de tiempo insertada: " + time);
-console.log("Minutos: " + minutos);
-console.log("Horas: " + horas);
-console.log("Días: " + dias);
+console.log("Minutos: " + time / conversion[0]);
+console.log("Horas: " + time / conversion[1]);
+console.log("Días: " + time / conversion[2]);
+console.log("Semanas: " + time / conversion[3]);
 
-
+for (let i = 0; i < conversion.length; i++){
+    console.log("El valor por el que es dividido el tiempo al operar es: " + conversion[i]);
+    console.log("Cantidad de elementos en el grupo de conversión: " + conversion.length);
+}
