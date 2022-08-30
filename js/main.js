@@ -1,7 +1,4 @@
-let userName = window.prompt("Inserte su nombre de usuario: ");
-let horas = 0;
-let minutos = 0;
-let dias = 0;
+const userName = window.prompt("Inserte su nombre de usuario: ");
 let i = 0;
 
 function contador(){
@@ -26,6 +23,7 @@ while(userName == "" || userName == null){
 console.log("Bienvenido, " + userName);
 
 let time = parseFloat(window.prompt("Inserte cantidad de tiempo en segundos: "));
+
 
 const conversion = [
     minutos = 60,
