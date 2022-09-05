@@ -12,9 +12,9 @@ console.log("Centimetros " + distance * conversion[0]);
 console.log("Kilometros: " + distance / conversion[1]);
 console.log("Millas: " + distance / conversion[2]);
 
-for (let i = 0; i < conversion.length; i++){
-    console.log("El valor por el que es operado la temperatura es: " + conversion[i]);
-}
+conversion.forEach((num)=>{
+    console.log("Valor por el que el numero es operado",num);   
+})
 console.log("Cantidad de elementos en el array de conversión: " + conversion.length);
 
 

@@ -39,7 +39,7 @@ console.log("Horas: " + time / conversion[1]);
 console.log("Días: " + time / conversion[2]);
 console.log("Semanas: " + time / conversion[3]);
 
-for (let i = 0; i < conversion.length; i++){
-    console.log("El valor por el que es dividido el tiempo al operar es: " + conversion[i]);
-}
+conversion.forEach((num)=>{
+    console.log("Valor por el que el numero es operado",num);   
+})
 console.log("Cantidad de elementos en el grupo de conversión: " + conversion.length);
