@@ -1,29 +1,4 @@
-const userName = window.prompt("Inserte su nombre de usuario: ");
-let i = 0;
-
-function contador(){
-    if(i > 3){
-        window.alert("Intentos agotados, recargue la página.")
-    }
-}
-
-
-while(userName == "" || userName == null){
-
-    i = i + 1;
-    let userName = window.prompt("Inserte su nombre de usuario: ");
-
-    console.log("Por favor ingrese un nombre válido")
-    console.log(i);
-
-    contador();
-    
-}
-
-console.log("Bienvenido, " + userName);
-
-let time = parseFloat(window.prompt("Inserte cantidad de tiempo en segundos: "));
-
+let time;
 
 const conversion = [
     minutos = 60,
@@ -32,14 +7,12 @@ const conversion = [
 ];
 conversion.push(semanas = 604800);
 
+document.getElementById("convertButton").onclick = function (){
 
-console.log("Cantidad de tiempo insertada: " + time);
-console.log("Minutos: " + time / conversion[0]);
-console.log("Horas: " + time / conversion[1]);
-console.log("Días: " + time / conversion[2]);
-console.log("Semanas: " + time / conversion[3]);
+    time = parseInt(document.getElementById("numTextBox").value);
 
-conversion.forEach((num)=>{
-    console.log("Valor por el que el numero es operado",num);   
-})
-console.log("Cantidad de elementos en el grupo de conversión: " + conversion.length);
+    document.getElementById("resultLabelA").innerHTML = "Minutos: " + time / conversion[0]; 
+    document.getElementById("resultLabelB").innerHTML = "Horas: " + time / conversion[1]; 
+    document.getElementById("resultLabelC").innerHTML = "Días: " + time / conversion[2]; 
+    document.getElementById("resultLabelD").innerHTML = "Semanas: " + time / conversion[3]; 
+}

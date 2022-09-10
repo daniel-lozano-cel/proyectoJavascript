@@ -1,5 +1,5 @@
 
-let distance = parseInt(window.prompt('Inserte la distancia a convertir en metros: '));
+let distance;
 
 const conversion = [
     kilometer = 1000,
@@ -7,14 +7,12 @@ const conversion = [
 ];
 conversion.unshift(centimeter = 100);
 
-console.log("Cantidad de metros insertada: " + distance);
-console.log("Centimetros " + distance * conversion[0]);
-console.log("Kilometros: " + distance / conversion[1]);
-console.log("Millas: " + distance / conversion[2]);
+document.getElementById("convertButton").onclick = function (){
 
-conversion.forEach((num)=>{
-    console.log("Valor por el que el numero es operado",num);   
-})
-console.log("Cantidad de elementos en el array de conversión: " + conversion.length);
+    distance = parseInt(document.getElementById("numTextBox").value);
 
+    document.getElementById("resultLabelA").innerHTML = "Centímetros: " + distance * conversion[0]; 
+    document.getElementById("resultLabelB").innerHTML = "Kilometros: " + distance / conversion[1]; 
+    document.getElementById("resultLabelC").innerHTML = "Millas: " + distance / conversion[2]; 
 
+}

@@ -11,12 +11,22 @@
         <h1>Simulador de Convertidor de temperatura<h1>
     </header>
     <article>
+        <h2>Debe insertar el resultado dando click, no funcionará presionando la tecla Enter.</h2>
         <hr>
-        <h2>F12 para abrir la consola.</h2>
         <h2>F5 para actualizar la página.</h2>
         <div>
+            <form>
+                <label id="numLabel">Inserte la cantidad de temperatura en grados Celcius: </label> <br/>
+                <input type="text" id="numTextBox"/> <br/>
+                <button type="button" id="convertButton">Convertir</button> <br/>
+
+                <label id="resultLabelA">Kelvin:</label> <br/>
+                <label id="resultLabelB">Fahrenheit:</label> <br/>
+            </form>
+        </div>
+        <div>
             <a href="../pages/distancia.html"><h3>Convertidor de distancia</h3></a>
-            <a href="../pages/temperatura.html"><h3>Convertidor de temperatura</h3></a>
+            <a href="../index.html"><h3>Convertidor de tiempo</h3></a>
         </div>
     </article>
     <script src="../js/temperatura.js"></script>
