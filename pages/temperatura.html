@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet"/>
     <title>Convertidor de temperatura</title>
+    <link rel="stylesheet" href="../style.css"/>
 </head>
 <body>
     <header>
@@ -12,9 +16,8 @@
     </header>
     <article>
         <h2>Debe insertar el resultado dando click, no funcionará presionando la tecla Enter.</h2>
-        <hr>
         <h2>F5 para actualizar la página.</h2>
-        <div>
+        <div class="formContainer">
             <form>
                 <label id="numLabel">Inserte la cantidad de temperatura en grados Celcius: </label> <br/>
                 <input type="text" id="numTextBox"/> <br/>
@@ -24,9 +27,9 @@
                 <label id="resultLabelB">Fahrenheit:</label> <br/>
             </form>
         </div>
-        <div>
-            <a href="../pages/distancia.html"><h3>Convertidor de distancia</h3></a>
-            <a href="../index.html"><h3>Convertidor de tiempo</h3></a>
+        <div class="buttonContainer">
+            <a href="../pages/distancia.html" class="button">Convertidor de distancia</a>
+            <a href="../index.html" class="button">Convertidor de tiempo</a>
         </div>
     </article>
     <script src="../js/temperatura.js"></script>
