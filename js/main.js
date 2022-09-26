@@ -1,4 +1,5 @@
 let time;
+let ten = document.getElementById('ten');
 
 const conversion = [
     minutos = 60,
@@ -16,6 +17,8 @@ document.getElementById("convertButton").onclick = function (){
     document.getElementById("resultLabelB").innerHTML = "Horas: " + time / conversion[1]; 
     document.getElementById("resultLabelC").innerHTML = "Días: " + time / conversion[2]; 
     document.getElementById("resultLabelD").innerHTML = "Semanas: " + time / conversion[3]; 
+
+    return(time >= 600 ? ten.textContent = "Son más de 10 minutos!" : ten.textContent = null );
 }
 
 function save_localStorage(){
@@ -27,5 +30,9 @@ function save_localStorage(){
     let name = "Daniel Lozano Cely";
     localStorage.setItem("nombre",name);
     localStorage.setItem("data", JSON.stringify(creator));
+    let nombre = creator.name
+    console.log(nombre);
 }
 save_localStorage()
+console.log(Math.max(...conversion));
+

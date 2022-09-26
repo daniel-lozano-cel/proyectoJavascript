@@ -1,4 +1,6 @@
 let temperature;
+let ten = document.getElementById('ten');
+
 
 document.getElementById("convertButton").onclick = function (){
 
@@ -10,6 +12,8 @@ document.getElementById("convertButton").onclick = function (){
 
     document.getElementById("resultLabelA").innerHTML = "Kelvin: " + kelvin1;
     document.getElementById("resultLabelB").innerHTML = "Fahrenheit: " + fahrenheit; 
+
+    return(time >= 20 ? ten.textContent = "Son más de 20 grados!" : ten.textContent = null );
 }
 
 function save_localStorage(){
@@ -21,5 +25,8 @@ function save_localStorage(){
     let name = "Daniel Lozano Cely";
     localStorage.setItem("nombre",name);
     localStorage.setItem("data", JSON.stringify(creator));
+    let nombre = creator.name
+    console.log(nombre);
 }
 save_localStorage()
+console.log(Math.max(...conversion));
