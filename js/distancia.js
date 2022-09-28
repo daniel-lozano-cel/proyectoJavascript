@@ -1,4 +1,3 @@
-
 let distance;
 let ten = document.getElementById('ten');
 
@@ -17,7 +16,7 @@ document.getElementById("convertButton").onclick = function (){
     document.getElementById("resultLabelB").innerHTML = "Kilometros: " + distance / conversion[1]; 
     document.getElementById("resultLabelC").innerHTML = "Millas: " + distance / conversion[2]; 
 
-    return(time >= 100 ? ten.textContent = "Son más de 100 metros!" : ten.textContent = null );
+    return(distance >= 100 ? ten.textContent = "Son más de 100 metros!" : ten.textContent = null );
 }
 
 function save_localStorage(){
@@ -34,3 +33,7 @@ function save_localStorage(){
 }
 save_localStorage()
 console.log(Math.max(...conversion));
+Swal.fire(
+    'F5 para actualizar la página',
+    'Sweetalert2',
+)

@@ -6,13 +6,11 @@ const conversion = [
     horas = 3600,
     dias = 8640
 ];
-
 conversion.push(semanas = 604800);
 
 document.getElementById("convertButton").onclick = function (){
 
     time = parseInt(document.getElementById("numTextBox").value);
-
     document.getElementById("resultLabelA").innerHTML = "Minutos: " + time / conversion[0]; 
     document.getElementById("resultLabelB").innerHTML = "Horas: " + time / conversion[1]; 
     document.getElementById("resultLabelC").innerHTML = "Días: " + time / conversion[2]; 
@@ -36,3 +34,8 @@ function save_localStorage(){
 save_localStorage()
 console.log(Math.max(...conversion));
 
+ 
+Swal.fire(
+    'F5 para actualizar la página',
+    'Sweetalert2',
+)

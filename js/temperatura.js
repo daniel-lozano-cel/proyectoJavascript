@@ -13,7 +13,7 @@ document.getElementById("convertButton").onclick = function (){
     document.getElementById("resultLabelA").innerHTML = "Kelvin: " + kelvin1;
     document.getElementById("resultLabelB").innerHTML = "Fahrenheit: " + fahrenheit; 
 
-    return(time >= 20 ? ten.textContent = "Son más de 20 grados!" : ten.textContent = null );
+    return(temperature >= 20 ? ten.textContent = "Son más de 20 grados!" : ten.textContent = null );
 }
 
 function save_localStorage(){
@@ -30,3 +30,7 @@ function save_localStorage(){
 }
 save_localStorage()
 console.log(Math.max(...conversion));
+Swal.fire(
+    'F5 para actualizar la página',
+    'Sweetalert2',
+)
