@@ -1,3 +1,5 @@
+//Declaración de variables
+
 const timeDisplay = document.querySelector("#display");
 const startBtn = document.querySelector("#startBtn");
 const pauseBtn = document.querySelector("#pauseBtn");
@@ -11,6 +13,7 @@ let hrs = 0;
 let mins = 0;
 let secs = 0;
 
+//Botón que inicia el tiempo
 startBtn.addEventListener("click", () => {
     if(paused){
         paused = false;
@@ -18,6 +21,8 @@ startBtn.addEventListener("click", () => {
         intervalid = setInterval(updateTime, 1000);
     }
 });
+
+//Botón que pausa el tiempo
 pauseBtn.addEventListener("click", () => {
     if(!paused){
         paused = true;
@@ -25,6 +30,8 @@ pauseBtn.addEventListener("click", () => {
         clearInterval(intervalid);
     }
 });
+
+//Botón que reinicia el tiempo
 resetBtn.addEventListener("click", () => {
     paused = true;
     clearInterval(intervalid);

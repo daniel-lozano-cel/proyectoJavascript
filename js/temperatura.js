@@ -1,9 +1,11 @@
+//Declaracíon de variables
 let input = document.getElementById('input');
 let result = document.getElementById('result');
 let inputType = document.getElementById('inputType');
 let resultType = document.getElementById('resultType');
 let inputTypeValue, resultTypeValue;
 
+//Eventos añadidos que invocan a la función que realiza el codigo
 input.addEventListener('keyup',myResult);
 inputType.addEventListener('change',myResult);
 resultType.addEventListener('change',myResult);
@@ -11,6 +13,8 @@ resultType.addEventListener('change',myResult);
 inputTypeValue = inputType.value;
 resultTypeValue = resultType.value;
 
+
+//Función que realiza el proceso de conversión
 function myResult(){
     inputTypeValue = inputType.value;
     resultTypeValue = resultType.value;
