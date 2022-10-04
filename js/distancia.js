@@ -1,23 +1,45 @@
-let distance;
-let ten = document.getElementById('ten');
+let input = document.getElementById('input');
+let result = document.getElementById('result');
+let inputType = document.getElementById('inputType');
+let resultType = document.getElementById('resultType');
+let inputTypeValue, resultTypeValue;
 
+input.addEventListener('keyup',myResult);
+inputType.addEventListener('change',myResult);
+resultType.addEventListener('change',myResult);
 
-const conversion = [
-    kilometer = 1000,
-    miles = 0,00062137,
-];
-conversion.unshift(centimeter = 100);
+inputTypeValue = inputType.value;
+resultTypeValue = resultType.value;
 
-document.getElementById("convertButton").onclick = function (){
+function myResult(){
+    inputTypeValue = inputType.value;
+    resultTypeValue = resultType.value;
 
-    distance = parseInt(document.getElementById("numTextBox").value);
+    if(inputTypeValue === "meter" && resultTypeValue === "kilometer"){
+        result.value = Number(input.value) * 0.001;
+    }else if(inputTypeValue === "meter" && resultTypeValue ==="centimeter"){
+        result.value = Number(input.value) * 100;
+    }else if(inputTypeValue === "meter" && resultTypeValue ==="meter"){
+        result.value = input.value
+    }
 
-    document.getElementById("resultLabelA").innerHTML = "Centímetros: " + distance * conversion[0]; 
-    document.getElementById("resultLabelB").innerHTML = "Kilometros: " + distance / conversion[1]; 
-    document.getElementById("resultLabelC").innerHTML = "Millas: " + distance / conversion[2]; 
+    if(inputTypeValue === "kilometer" && resultTypeValue === "meter"){
+        result.value = Number(input.value) * 1000;
+    }else if(inputTypeValue === "kilometer" && resultTypeValue ==="centimeter"){
+        result.value = Number(input.value) * 100000;
+    }else if(inputTypeValue === "kilometer" && resultTypeValue ==="kilometer"){
+        result.value = input.value
+    }
 
-    return(distance >= 100 ? ten.textContent = "Son más de 100 metros!" : ten.textContent = null );
-}
+    if(inputTypeValue === "centimeter" && resultTypeValue === "kilometer"){
+        result.value = Number(input.value) * 0.00001;
+    }else if(inputTypeValue === "centimeter" && resultTypeValue ==="meter"){
+        result.value = Number(input.value) * 0.01;
+    }else if(inputTypeValue === "centimeter" && resultTypeValue ==="centimeter"){
+        result.value = input.value
+    }
+    
+};
 
 function save_localStorage(){
     let creator = {
@@ -33,7 +55,3 @@ function save_localStorage(){
 }
 save_localStorage()
 console.log(Math.max(...conversion));
-Swal.fire(
-    'F5 para actualizar la página',
-    'Sweetalert2',
-)

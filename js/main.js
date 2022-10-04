@@ -1,23 +1,81 @@
-let time;
-let ten = document.getElementById('ten');
+let input = document.getElementById('input');
+let result = document.getElementById('result');
+let inputType = document.getElementById('inputType');
+let resultType = document.getElementById('resultType');
+let inputTypeValue, resultTypeValue;
 
-const conversion = [
-    minutos = 60,
-    horas = 3600,
-    dias = 8640
-];
-conversion.push(semanas = 604800);
+input.addEventListener('keyup',myResult);
+inputType.addEventListener('change',myResult);
+resultType.addEventListener('change',myResult);
 
-document.getElementById("convertButton").onclick = function (){
+inputTypeValue = inputType.value;
+resultTypeValue = resultType.value;
 
-    time = parseInt(document.getElementById("numTextBox").value);
-    document.getElementById("resultLabelA").innerHTML = "Minutos: " + time / conversion[0]; 
-    document.getElementById("resultLabelB").innerHTML = "Horas: " + time / conversion[1]; 
-    document.getElementById("resultLabelC").innerHTML = "Días: " + time / conversion[2]; 
-    document.getElementById("resultLabelD").innerHTML = "Semanas: " + time / conversion[3]; 
+function myResult(){
+    inputTypeValue = inputType.value;
+    resultTypeValue = resultType.value;
 
-    return(time >= 600 ? ten.textContent = "Son más de 10 minutos!" : ten.textContent = null );
-}
+    if(inputTypeValue === "mins" && resultTypeValue === "secs"){
+        result.value = Number(input.value) * 60;
+    }else if(inputTypeValue === "mins" && resultTypeValue ==="hrs"){
+        result.value = Number(input.value) / 60;
+    }else if(inputTypeValue === "mins" && resultTypeValue ==="days"){
+        result.value = Number(input.value) / 1440;
+    }else if(inputTypeValue === "mins" && resultTypeValue ==="weeks"){
+        result.value = Number(input.value) / 10080;
+    }else if(inputTypeValue === "mins" && resultTypeValue ==="mins"){
+        result.value = input.value
+    }
+
+    if(inputTypeValue === "secs" && resultTypeValue === "mins"){
+        result.value = Number(input.value) / 60;
+    }else if(inputTypeValue === "secs" && resultTypeValue ==="hrs"){
+        result.value = Number(input.value) / 3600;
+    }else if(inputTypeValue === "secs" && resultTypeValue ==="days"){
+        result.value = Number(input.value) / 86400;
+    }else if(inputTypeValue === "secs" && resultTypeValue ==="weeks"){
+        result.value = Number(input.value) / 604800; 
+    }else if(inputTypeValue === "secs" && resultTypeValue ==="secs"){
+        result.value = input.value
+    }
+
+    if(inputTypeValue === "hrs" && resultTypeValue === "mins"){
+        result.value = Number(input.value) * 60;
+    }else if(inputTypeValue === "hrs" && resultTypeValue ==="secs"){
+        result.value = Number(input.value) * 3600;
+    }else if(inputTypeValue === "hrs" && resultTypeValue ==="days"){
+        result.value = Number(input.value) / 24;
+    }else if(inputTypeValue === "hrs" && resultTypeValue ==="weeks"){
+        result.value = Number(input.value) * 168;
+    }else if(inputTypeValue === "hrs" && resultTypeValue ==="hrs"){
+        result.value = input.value
+    }
+
+    if(inputTypeValue === "days" && resultTypeValue === "mins"){
+        result.value = Number(input.value) * 1440;
+    }else if(inputTypeValue === "days" && resultTypeValue ==="secs"){
+        result.value = Number(input.value) * 86400;
+    }else if(inputTypeValue === "days" && resultTypeValue ==="hrs"){
+        result.value = Number(input.value) * 24;
+    }else if(inputTypeValue === "days" && resultTypeValue ==="weeks"){
+        result.value = Number(input.value) / 7;
+    }else if(inputTypeValue === "days" && resultTypeValue ==="days"){
+        result.value = input.value
+    }
+
+    if(inputTypeValue === "weeks" && resultTypeValue === "mins"){
+        result.value = Number(input.value) * 10080;
+    }else if(inputTypeValue === "weeks" && resultTypeValue ==="secs"){
+        result.value = Number(input.value) * 604800;
+    }else if(inputTypeValue === "weeks" && resultTypeValue ==="hrs"){
+        result.value = Number(input.value) * 168;
+    }else if(inputTypeValue === "weeks" && resultTypeValue ==="days"){
+        result.value = Number(input.value) * 7;
+    }else if(inputTypeValue === "weeks" && resultTypeValue ==="weeks"){
+        result.value = input.value
+    }
+    
+};
 
 function save_localStorage(){
     let creator = {
@@ -33,9 +91,3 @@ function save_localStorage(){
 }
 save_localStorage()
 console.log(Math.max(...conversion));
-
- 
-Swal.fire(
-    'F5 para actualizar la página',
-    'Sweetalert2',
-)

@@ -11,40 +11,25 @@
     <link rel="stylesheet" href="../style.css"/>
 </head>
 <body>
-    <header>
-        <h1>Convertidor de Tiempo</h1>
-    </header>
     <article>
-        <div class="coverterBody">
-            <input type="text" placeholder="Input" id="input">
-            <span>=</span>
-            <input type="text" placeholder="Result" id="result">
-            <select id="resultType">
-                <option value="secs">Segundos</option>
-                <option value="mins">Minutos</option>
-                <option value="hours">Horas</option>
-                <option value="days">Días</option>
-                <option value="weeks">Semanas</option>
-            </select>
-            <select id="resultType">
-                <option value="secs">Segundos</option>
-                <option value="mins">Minutos</option>
-                <option value="hours">Horas</option>
-                <option value="days">Días</option>
-                <option value="weeks">Semanas</option>
-            </select>
+        <h1>Contador Basico</h1>
+        <div id="timeContainer">
+            <label for="" id="num">0</label> <br/>
+            <button id="increaseBtn">Increase</button>
+            <button id="resetBtn">Reset</button>
+            <button id="decreaseBtn">Decrease</button>
         </div>
         <div class="buttonContainer">
             <a href="../pages/distancia.html" class="button">Convertidor de distancia</a>
             <a href="../index.html" class="button">Convertidor de tiempo</a>
-            <a href="../pages/peso.html" class="button">Convertidor de Peso</a>
+            <a href="../pages/temperatura.html" class="button">Convertidor de temperatura</a>
             <a href="../pages/contador.html" class="button">Contador</a>
             <a href="../pages/cronometro.html" class="button">Cronómetro</a>
         </div>
     </article>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <script src="../js/temperatura.js"></script>
+    <script src="../js/contador.js"></script>
     <script src="../js/sweetalertAndFetch.js"></script>
     <script src="../js/fetch.js"></script>
 

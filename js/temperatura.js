@@ -1,20 +1,45 @@
-let temperature;
-let ten = document.getElementById('ten');
+let input = document.getElementById('input');
+let result = document.getElementById('result');
+let inputType = document.getElementById('inputType');
+let resultType = document.getElementById('resultType');
+let inputTypeValue, resultTypeValue;
 
+input.addEventListener('keyup',myResult);
+inputType.addEventListener('change',myResult);
+resultType.addEventListener('change',myResult);
 
-document.getElementById("convertButton").onclick = function (){
+inputTypeValue = inputType.value;
+resultTypeValue = resultType.value;
 
+function myResult(){
+    inputTypeValue = inputType.value;
+    resultTypeValue = resultType.value;
 
-    temperature = parseInt(document.getElementById("numTextBox").value);
+    if(inputTypeValue === "celcius" && resultTypeValue === "kelvin"){
+        result.value = Number(input.value) + 273.15;
+    }else if(inputTypeValue === "celcius" && resultTypeValue ==="fahrenheit"){
+        result.value = (Number(input.value) * 1.8) +32;
+    }else if(inputTypeValue === "celcius" && resultTypeValue ==="celcius"){
+        result.value = input.value
+    }
 
-    kelvin1 = 273.15 + temperature;
-    fahrenheit = (temperature * 1.8) + 32;
+    if(inputTypeValue === "kelvin" && resultTypeValue === "celcius"){
+        result.value = Number(input.value) - 273.15;
+    }else if(inputTypeValue === "kelvin" && resultTypeValue ==="fahrenheit"){
+        result.value = (Number(input.value) - 273.15) * 1.8 + 32;
+    }else if(inputTypeValue === "kelvin" && resultTypeValue ==="kelvin"){
+        result.value = input.value
+    }
 
-    document.getElementById("resultLabelA").innerHTML = "Kelvin: " + kelvin1;
-    document.getElementById("resultLabelB").innerHTML = "Fahrenheit: " + fahrenheit; 
-
-    return(temperature >= 20 ? ten.textContent = "Son más de 20 grados!" : ten.textContent = null );
-}
+    if(inputTypeValue === "fahrenheit" && resultTypeValue === "celcius"){
+        result.value = (Number(input.value) - 32) * 5 / 9;
+    }else if(inputTypeValue === "fahrenheit" && resultTypeValue ==="kelvin"){
+        result.value = (Number(input.value) -32 ) * 5 / 9 +273.15;
+    }else if(inputTypeValue === "fahrenheit" && resultTypeValue ==="fahrenheit"){
+        result.value = input.value
+    }
+    
+};
 
 function save_localStorage(){
     let creator = {
@@ -30,7 +55,3 @@ function save_localStorage(){
 }
 save_localStorage()
 console.log(Math.max(...conversion));
-Swal.fire(
-    'F5 para actualizar la página',
-    'Sweetalert2',
-)

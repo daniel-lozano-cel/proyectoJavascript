@@ -7,37 +7,45 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet"/>
-    <title>Document</title>
+    <title>Convertidor de Distancia</title>
     <link rel="stylesheet" href="../style.css"/>
 </head>
 <body>
     <header>
-        <h1>Simulador de Convertidor de distancia<h1>
+        <h1>Convertidor de Tiempo</h1>
     </header>
     <article>
-        <h2>Debe insertar el resultado dando click, no funcionará presionando la tecla Enter.</h2>
-        <h2>F5 para actualizar la página.</h2>
-        <div class="formContainer">
-            <form>
-                <label id="numLabel">Inserte la cantidad de distancia en metros: </label> <br/>
-                <input type="text" id="numTextBox"/> <br/>
-                <button type="button" id="convertButton">Convertir</button> <br/>
-
-                <label id="resultLabelA">Centímetros:</label> <br/>
-                <label id="resultLabelB">Kilometros:</label> <br/>
-                <label id="resultLabelC">Millas:</label> <br/>
-                <label id="ten"></label>
-
-            </form>
+        <div class="coverterBody">
+            <input type="text" placeholder="Input" id="input">
+            <span>=</span>
+            <input type="text" placeholder="Result" id="result">
+            <select id="resultType">
+                <option value="secs">Segundos</option>
+                <option value="mins">Minutos</option>
+                <option value="hours">Horas</option>
+                <option value="days">Días</option>
+                <option value="weeks">Semanas</option>
+            </select>
+            <select id="resultType">
+                <option value="secs">Segundos</option>
+                <option value="mins">Minutos</option>
+                <option value="hours">Horas</option>
+                <option value="days">Días</option>
+                <option value="weeks">Semanas</option>
+            </select>
         </div>
         <div class="buttonContainer">
-            <a href="../pages/temperatura.html" class="button">Convertidor de temperatura</a>
             <a href="../index.html" class="button">Convertidor de tiempo</a>
+            <a href="../pages/temperatura.html" class="button">Convertidor de temperatura</a>
+            <a href="../pages/peso.html" class="button">Convertidor de peso</a>
+            <a href="../pages/cronometro.html" class="button">Cronómetro</a>
+            <a href="../pages/contador.html" class="button">Contador</a>
         </div>
     </article>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script src="../js/distancia.js"></script>
+    <script src="../js/sweetalertAndFetch.js"></script>
     <script src="../js/fetch.js"></script>
 
 </body>

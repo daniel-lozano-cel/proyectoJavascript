@@ -19,16 +19,102 @@ h1{
     padding: 10px;
     border-style:dashed;
     display: flex;
-    justify-content: center ;
+    justify-content: center;
 }
 .button{
     background-color: #142d4c;
     color:white;
     padding: 20px;
+    font-family: 'Righteous', cursive;
 }
 .buttonContainer{
-    margin-top: 100px;
+    margin-top: 200px;
     display: flex;
     justify-content: center;
-    gap: 50px;
+    gap: 0px;
+}
+/* Temporizador */
+
+.timerButton{
+    background-color: #385170;
+    color: #ececec;
+    border: 0px;
+    padding: 10px;
+    font-size: 15px;
+    font-family: 'Righteous', cursive;
+}
+.timerButton:hover{
+    color:#3a7ac9;
+}
+#display{
+    color: #40c437;
+    font-size: 60px;
+}
+#timeContainer{
+    margin: 50px;
+    padding: 20px;
+    text-align: center;
+    border: 3px solid;
+    background-color: #222222;
+}
+.coverterBody{
+    width: 400px;
+    height: 100px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    box-shadow: 0px 0px 2px 1px #cacaca;
+    transform: translate(-50%,-50%);
+    margin-bottom: 50px;
+}
+.converterTitle{
+    text-align: center;
+    margin: 13px 0px;
+}
+input{
+    height: 25px;
+    text-align: center;
+}
+#input{
+    margin-top: 25px;
+    margin-left: 25px;
+}
+#inputType,#resultType{
+    width: 166.66px;
+    margin-left: 25px;
+    color:blue;
+}
+#resultType{
+    margin-left: 12.5px;
+}
+
+/* Contador de tiempo */
+#timeContainer label{
+    color:white;
+}
+
+#increaseBtn{
+    background-color: #40c437;
+    border: #40c437;
+    color:white;
+    padding: 10px;
+    font-family: 'Righteous', cursive;
+}
+#resetBtn{
+    background:#3a7ac9;
+    border:#3a7ac9;
+    color:white;
+    padding: 10px;
+    font-family: 'Righteous', cursive;
+}
+#decreaseBtn{
+    background-color: darkred;
+    border:darkred;
+    color:white;
+    padding: 10px;
+    font-family: 'Righteous', cursive;
+}
+#num{
+    color:#40c437;
+    font-size: 75px;
 }

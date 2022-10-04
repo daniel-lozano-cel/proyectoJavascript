@@ -1,3 +1,8 @@
+Swal.fire(
+    'F5 para actualizar la página',
+    'Sweetalert2',
+)
+
 fetch('https://fakestoreapi.com/products/1', {
     method: 'POST',
     headers: {
